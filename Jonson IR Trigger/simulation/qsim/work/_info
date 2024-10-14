@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/_schema/Jonson/simulation/qsim
+vhard_block
+Z1 !s110 1620994589
+!i10b 1
+!s100 zh^7BP22nXYhSW1?z>:Zk0
+I40:Vz3]U<U2`0@lTiaAh50
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1620994589
+Z4 8Jonson.vo
+Z5 FJonson.vo
+L0 801
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1620994589.000000
+Z8 !s107 Jonson.vo|
+Z9 !s90 -work|work|Jonson.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vJonson
+R1
+!i10b 1
+!s100 HnoM0eLz2PcodZ0[n1mLe2
+IUYDmLP_[BWNG=8?o^>h`W2
+R2
+R0
+R3
+R4
+R5
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@jonson
+vJonson_vlg_vec_tst
+R1
+!i10b 1
+!s100 4nml]K0:FM_I@1M9YF@6o2
+IXoDjM8OTjR<`_U1a^;2381
+R2
+R0
+w1620994588
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@jonson_vlg_vec_tst

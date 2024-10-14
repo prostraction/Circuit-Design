@@ -1,0 +1,495 @@
+Analysis & Synthesis report for test
+Tue Jul 07 16:24:11 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: analise_unit:inst24
+ 12. Parameter Settings for User Entity Instance: Multiply:inst1
+ 13. Parameter Settings for User Entity Instance: gen_test:inst
+ 14. Parameter Settings for User Entity Instance: actual_result:inst26
+ 15. Parameter Settings for Inferred Entity Instance: actual_result:inst26|lpm_mult:Mult0
+ 16. lpm_mult Parameter Settings by Entity Instance
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jul 07 16:24:11 2020       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; test                                        ;
+; Top-level Entity Name              ; test_alg                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 143                                         ;
+;     Total combinational functions  ; 143                                         ;
+;     Dedicated logic registers      ; 10                                          ;
+; Total registers                    ; 10                                          ;
+; Total pins                         ; 29                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; test_alg           ; test               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
+; gen_test.vhd                     ; yes             ; User VHDL File                     ; C:/_TA/stand_test_algoritm/stand/gen_test.vhd                      ;         ;
+; analise_unit.vhd                 ; yes             ; User VHDL File                     ; C:/_TA/stand_test_algoritm/stand/analise_unit.vhd                  ;         ;
+; actual_result.vhd                ; yes             ; User VHDL File                     ; C:/_TA/stand_test_algoritm/stand/actual_result.vhd                 ;         ;
+; test_alg.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/_TA/stand_test_algoritm/stand/test_alg.bdf                      ;         ;
+; Multiply.vhd                     ; yes             ; User VHDL File                     ; C:/_TA/stand_test_algoritm/stand/Multiply.vhd                      ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/aglobal191.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_ibh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/_TA/stand_test_algoritm/stand/db/add_sub_ibh.tdf                ;         ;
+; db/add_sub_jbh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/_TA/stand_test_algoritm/stand/db/add_sub_jbh.tdf                ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 143                  ;
+;                                             ;                      ;
+; Total combinational functions               ; 143                  ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 25                   ;
+;     -- 3 input functions                    ; 64                   ;
+;     -- <=2 input functions                  ; 54                   ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 67                   ;
+;     -- arithmetic mode                      ; 76                   ;
+;                                             ;                      ;
+; Total registers                             ; 10                   ;
+;     -- Dedicated logic registers            ; 10                   ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 29                   ;
+;                                             ;                      ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; gen_test:inst|cnt[3] ;
+; Maximum fan-out                             ; 45                   ;
+; Total fan-out                               ; 477                  ;
+; Average fan-out                             ; 2.26                 ;
++---------------------------------------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                   ; Entity Name   ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+; |test_alg                                         ; 143 (0)             ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |test_alg                                                                                                                                             ; test_alg      ; work         ;
+;    |Multiply:inst1|                               ; 100 (100)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|Multiply:inst1                                                                                                                              ; Multiply      ; work         ;
+;    |actual_result:inst26|                         ; 24 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26                                                                                                                        ; actual_result ; work         ;
+;       |lpm_mult:Mult0|                            ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0                                                                                                         ; lpm_mult      ; work         ;
+;          |multcore:mult_core|                     ; 17 (9)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore      ; work         ;
+;             |mpar_add:padder|                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add      ; work         ;
+;                |lpm_add_sub:adder[0]|             ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub   ; work         ;
+;                   |add_sub_ibh:auto_generated|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_ibh:auto_generated                      ; add_sub_ibh   ; work         ;
+;                |mpar_add:sub_par_add|             ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add      ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub   ; work         ;
+;                      |add_sub_jbh:auto_generated| ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_jbh:auto_generated ; add_sub_jbh   ; work         ;
+;    |analise_unit:inst24|                          ; 7 (7)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|analise_unit:inst24                                                                                                                         ; analise_unit  ; work         ;
+;    |gen_test:inst|                                ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_alg|gen_test:inst                                                                                                                               ; gen_test      ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 10    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; analise_unit:inst24|okey               ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |test_alg|gen_test:inst|cnt[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |test_alg|Multiply:inst1|c[3]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: analise_unit:inst24 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 4     ; Unsigned Integer                        ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiply:inst1 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: gen_test:inst ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 4     ; Unsigned Integer                  ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: actual_result:inst26 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 4     ; Unsigned Integer                         ;
+; mode           ; 2     ; Unsigned Integer                         ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: actual_result:inst26|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+----------------------+
+; Parameter Name                                 ; Value        ; Type                 ;
++------------------------------------------------+--------------+----------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE       ;
+; LPM_WIDTHA                                     ; 3            ; Untyped              ;
+; LPM_WIDTHB                                     ; 3            ; Untyped              ;
+; LPM_WIDTHP                                     ; 6            ; Untyped              ;
+; LPM_WIDTHR                                     ; 6            ; Untyped              ;
+; LPM_WIDTHS                                     ; 1            ; Untyped              ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped              ;
+; LPM_PIPELINE                                   ; 0            ; Untyped              ;
+; LATENCY                                        ; 0            ; Untyped              ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped              ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped              ;
+; USE_EAB                                        ; OFF          ; Untyped              ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped              ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped              ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped              ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped              ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped              ;
++------------------------------------------------+--------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                              ;
++---------------------------------------+-------------------------------------+
+; Name                                  ; Value                               ;
++---------------------------------------+-------------------------------------+
+; Number of entity instances            ; 1                                   ;
+; Entity Instance                       ; actual_result:inst26|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 3                                   ;
+;     -- LPM_WIDTHB                     ; 3                                   ;
+;     -- LPM_WIDTHP                     ; 6                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                  ;
+;     -- USE_EAB                        ; OFF                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                  ;
++---------------------------------------+-------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 29                          ;
+; cycloneiii_ff         ; 10                          ;
+;     CLR               ; 2                           ;
+;     ENA SCLR          ; 8                           ;
+; cycloneiii_lcell_comb ; 144                         ;
+;     arith             ; 76                          ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 41                          ;
+;     normal            ; 68                          ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 25                          ;
+;                       ;                             ;
+; Max LUT depth         ; 19.90                       ;
+; Average LUT depth     ; 15.92                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Tue Jul 07 16:24:04 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test -c test
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file gen_test.vhd
+    Info (12022): Found design unit 1: gen_test-rtl File: C:/_TA/stand_test_algoritm/stand/gen_test.vhd Line: 25
+    Info (12023): Found entity 1: gen_test File: C:/_TA/stand_test_algoritm/stand/gen_test.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file analise_unit.vhd
+    Info (12022): Found design unit 1: analise_unit-rtl File: C:/_TA/stand_test_algoritm/stand/analise_unit.vhd Line: 26
+    Info (12023): Found entity 1: analise_unit File: C:/_TA/stand_test_algoritm/stand/analise_unit.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file actual_result.vhd
+    Info (12022): Found design unit 1: actual_result-test_architecture File: C:/_TA/stand_test_algoritm/stand/actual_result.vhd Line: 31
+    Info (12023): Found entity 1: actual_result File: C:/_TA/stand_test_algoritm/stand/actual_result.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file test_alg.bdf
+    Info (12023): Found entity 1: test_alg
+Info (12021): Found 2 design units, including 1 entities, in source file multiply.vhd
+    Info (12022): Found design unit 1: Multiply-Behavioral File: C:/_TA/stand_test_algoritm/stand/Multiply.vhd Line: 11
+    Info (12023): Found entity 1: Multiply File: C:/_TA/stand_test_algoritm/stand/Multiply.vhd Line: 5
+Info (12127): Elaborating entity "test_alg" for the top level hierarchy
+Info (12128): Elaborating entity "analise_unit" for hierarchy "analise_unit:inst24"
+Info (12128): Elaborating entity "Multiply" for hierarchy "Multiply:inst1"
+Info (12128): Elaborating entity "gen_test" for hierarchy "gen_test:inst"
+Info (12128): Elaborating entity "actual_result" for hierarchy "actual_result:inst26"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "actual_result:inst26|Mult0" File: d:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+Info (12130): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+Info (12133): Instantiated megafunction "actual_result:inst26|lpm_mult:Mult0" with the following parameter: File: d:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+    Info (12134): Parameter "LPM_WIDTHA" = "3"
+    Info (12134): Parameter "LPM_WIDTHB" = "3"
+    Info (12134): Parameter "LPM_WIDTHP" = "6"
+    Info (12134): Parameter "LPM_WIDTHR" = "6"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf Line: 324
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/multcore.tdf Line: 283
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ibh.tdf
+    Info (12023): Found entity 1: add_sub_ibh File: C:/_TA/stand_test_algoritm/stand/db/add_sub_ibh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_jbh.tdf
+    Info (12023): Found entity 1: add_sub_jbh File: C:/_TA/stand_test_algoritm/stand/db/add_sub_jbh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "actual_result:inst26|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "actual_result:inst26|lpm_mult:Mult0" File: d:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (13000): Registers with preset signals will power-up high File: C:/_TA/stand_test_algoritm/stand/analise_unit.vhd Line: 21
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 173 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 27 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Tue Jul 07 16:24:11 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
+
+

@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sko",
+					"strict" : false
+				},
+				{
+					"name" : "cx_test[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cx_test[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cx_test[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cx_test[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pr_rc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "b_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cop_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cop_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "a_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "a_t[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/_TA/MEALY_QUART/simulation/qsim
+vhard_block
+Z1 !s110 1593975191
+!i10b 1
+!s100 ;EFQCOHTiY^MAc?F;_DBW3
+IX4E?[>mnaGeIS9?K^PT_;0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1593975191
+Z4 8meely.vo
+Z5 Fmeely.vo
+L0 380
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1593975191.000000
+Z8 !s107 meely.vo|
+Z9 !s90 -work|work|meely.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vmeely
+R1
+!i10b 1
+!s100 zFgR[4E;KKX7b]aG]z0Ld3
+I4`P5=l^`je^NI3:_5je?K1
+R2
+R0
+R3
+R4
+R5
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vmeely_vlg_vec_tst
+R1
+!i10b 1
+!s100 M@8IY4KAHZg2P^I37E2KB3
+ICknh[?0J@a0f50lWV<VIj1
+R2
+R0
+w1593975190
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11

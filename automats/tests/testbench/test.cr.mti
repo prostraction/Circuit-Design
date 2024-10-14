@@ -1,0 +1,53 @@
+C:/_TA/testbench/mealy_pack.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/mealy_pack.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Compiling package mealy_pack
+
+} {} {}} C:/_TA/testbench/Moore.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/Moore.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package moore_pack
+-- Loading package pack
+-- Compiling entity Moore
+-- Compiling architecture ArchMoore of Moore
+
+} {} {}} C:/_TA/testbench/pack.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/pack.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Compiling package pack
+
+} {} {}} C:/_TA/testbench/moore_pack.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/moore_pack.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Compiling package moore_pack
+
+} {} {}} C:/_TA/testbench/mealy.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/mealy.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package mealy_pack
+-- Loading package pack
+-- Compiling entity Mealy
+-- Compiling architecture ArchMealy of Mealy
+
+} {} {}} C:/_TA/testbench/Testbench.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/_TA/testbench/Testbench.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package mealy_pack
+-- Loading package moore_pack
+-- Loading package pack
+-- Compiling entity Testbench
+-- Compiling architecture ArchTestbench of Testbench
+
+} {} {}}

@@ -1,0 +1,30 @@
+|meely
+tay1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+tay2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => inst1.ACLR
+CLRN => inst.ACLR
+x2 => inst11.IN0
+x2 => inst20.IN2
+x2 => inst15.IN2
+x2 => inst14.IN0
+x2 => inst36.IN0
+x2 => inst37.IN1
+x2 => inst42.IN2
+x2 => inst32.IN2
+x1 => inst24.IN1
+x1 => inst10.IN0
+x1 => inst19.IN0
+x1 => inst16.IN2
+x1 => inst37.IN0
+x1 => inst38.IN1
+x1 => inst39.IN1
+x1 => inst33.IN0
+CLK => inst1.CLK
+CLK => inst.CLK
+ENA => inst1.ENA
+ENA => inst.ENA
+y2 <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= inst44.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+
+

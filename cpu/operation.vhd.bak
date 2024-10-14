@@ -1,0 +1,96 @@
+--В этом файле содержится описание блока операций, который выполняет две операции - умножение и сложение
+--Используется 7 микрокоманд
+--В пакете mk_pack описаны 7 микрокоманд
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+library work;
+use work.mk_pack.all;	-- подключаем пакет с описанием микрокоманд
+
+entity block_operation_mk is
+generic(n:integer:=4); -- n параметр задает разрядность операндов
+Port
+(		y: in control_y;    									-- управляющие сигналы задают микрокоманды
+		x: out std_logic_vector(3 downto 0);    		-- логические условия(i=n-1, отрицательный ноль, текущий разряд, знаковый
+	   a: in std_logic_vector(n-1 downto 0);    		-- 1-ый операнд (множимое)
+	   b: in std_logic_vector(n-1 downto 0);    		-- 2-ой операнд (множитель)
+	   rc: buffer std_logic_vector(n*2-1 downto 0); -- результат (произведение)
+		priznak: out integer range 0  to 3; 			-- признака результата
+	   clk: in bit												-- синхросигнал 
+);
+end block_operation_mk;
+
+architecture behav of block_operation_mk is
+-- функция выполняет суммирование чисел в обратном коде
+function sum_obr_kod (XX,YY: std_logic_vector(2*n-1 downto 0))
+		return std_logic_vector is
+		variable sum: std_logic_vector(2*n downto 0):=(others =>'0');
+
+	begin
+	sum:=('0'&XX)+('0'&YY);
+	if (sum(2*n)='1') then sum(2*n):='0';sum:= sum+1; -- корректирующий шаг
+	end if;
+	return sum(2*n-1 downto 0);
+	end sum_obr_kod;
+-- функция вычисляет признак результата
+function priznak_rez (ZZ: std_logic_vector(n downto 0))
+			return  integer is
+			variable pr:integer range 0 to 3;
+			constant zero: std_logic_vector(n downto 0):=(others =>'0'); -- положительный ноль
+	begin
+
+		if ZZ=zero then pr:= 0; 							-- результат равен нулю
+			elsif ZZ(n downto n-1)="00" then pr:= 1; 	-- результат больше нуля
+			elsif ZZ(n downto n-1)="11" then pr:= 2; 	-- результат меньше нуля
+		else pr:= 3; 											-- переполнение
+		end if;
+		return pr;
+		end priznak_rez;
+
+	constant neg_zero: std_logic_vector(n downto 0):=(others =>'1'); -- отрицательный ноль	
+
+   signal ra: std_logic_vector(n-1 downto 0); 	--регистр множимого
+   signal rb: std_logic_vector(n-1 downto 0); 	--регистр множителя
+   signal i: integer range 1  to n-1; 				--счетчик анализируемых разрядов
+	
+begin
+
+   MK:process(clk) --этот процесс описывает выполняемые в БО микрокоманды
+  
+	variable zn_a,zn_b: std_logic_vector(n-1 downto 0);
+	
+	 begin
+	zn_a:=(others=>ra(n-1));
+	zn_b:=(others=>rb(n-1));
+	
+   if clk' event and clk='1' then --по положительному фронту clk
+	if (y=mk1) then 
+	
+	ra(n-1 downto 0)<=a;
+
+	rb(n-1 downto 0)<=b;rc<=(others =>'0'); i<=1;-- если mk1, то
+	--прием  в ra множимого, прием в rb множителя, обнуление rc, инициализация i
+	end if;
+	if (y=mk2) then rc<=sum_obr_kod(rc,zn_a&ra); 	-- если mk2, то к rc прибавляем множимое +RA
+	end if;
+	if (y=mk3) then rc<=sum_obr_kod(rc,not zn_a &not(ra)); 	-- если mk3, то из rc вычитаем множимое RA
+	end if;
+	if (y=mk4) then rc<=sum_obr_kod(zn_a&ra,zn_b&rb); 	-- если mk4, то складываем множимое RA и множитель RB
+	end if;
+	if (y=mk5) then rc<=rc(n*2-2 downto 0)&rc (2*n-1); rb(n-2 downto 1)<=rb(n-3 downto 0); i<=i+1; -- если mk5, то
+	-- сдвиг влево rc, сдвиг влево rb, инкремент i
+	end if;
+	if (y=mk6) then rc<=(others =>'0'); 	-- если mk6, то обнуляем RR
+	end if;
+	if (y=mk7) then priznak<= priznak_rez(rc(n downto 0)); 	-- если mk7, то запись признака в регистр признака
+	end if;
+	end if;
+	end process;
+	--Формируемые БО логические условия 
+	x(0)<=rb(n-1);						-- знаковый разряд множителя
+	x(1)<=rb(n-2);						-- анализируемый разряд множителя
+	x(2)<='1' when rc(n downto 0 )= neg_zero else '0';	-- признак отрицательного нуля
+	x(3)<='1' when i=n-1 else '0';	-- признак анализа младшего цифрового разряда множителя
+end behav;

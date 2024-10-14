@@ -1,0 +1,6 @@
+
+State Machine - |alu|mealy_state_machine:inst2|state
+Name state.s2 state.s1 state.s0 
+state.s0 0 0 0 
+state.s1 0 1 1 
+state.s2 1 0 1 

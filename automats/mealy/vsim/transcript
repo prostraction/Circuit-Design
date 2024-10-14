@@ -1,0 +1,66 @@
+# Compile of pack.vhd was successful.
+# Compile of mealy_pack.vhd was successful.
+# Compile of mealy.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.mealy
+# vsim -gui work.mealy 
+# Start time: 17:55:52 on Jul 06,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.mealy_pack
+# Loading work.pack
+# Loading work.mealy(archmealy)
+add wave -position insertpoint  \
+sim:/mealy/set
+add wave -position insertpoint  \
+sim:/mealy/clk
+add wave -position insertpoint  \
+sim:/mealy/x
+add wave -position insertpoint  \
+sim:/mealy/s
+add wave -position insertpoint  \
+sim:/mealy/NEXT_s
+add wave -position insertpoint  \
+sim:/mealy/y
+force -freeze sim:/mealy/set 1 0
+force -freeze sim:/mealy/clk 1 0, 0 {5000 ps} -r {10 ns}
+force -freeze sim:/mealy/x x2 0
+run
+force -freeze sim:/mealy/set 0 0
+run
+run
+force -freeze sim:/mealy/x x1 0
+run
+run
+force -freeze sim:/mealy/x x3 0
+run
+force -freeze sim:/mealy/x x4 0
+run
+force -freeze sim:/mealy/x x3 0
+run
+force -freeze sim:/mealy/x x2 0
+run
+force -freeze sim:/mealy/x x3 0
+run
+force -freeze sim:/mealy/x x2 0
+run
+force -freeze sim:/mealy/x x1 0
+run
+force -freeze sim:/mealy/x x2 0
+run
+force -freeze sim:/mealy/x x3 0
+run
+run
+force -freeze sim:/mealy/x x2 0
+run
+run
+force -freeze sim:/mealy/x x4 0
+run
+force -freeze sim:/mealy/x x2 0
+run
+run
+# End time: 23:44:04 on Jul 06,2020, Elapsed time: 5:48:12
+# Errors: 0, Warnings: 0

@@ -1,0 +1,46 @@
+|lab1
+f2 <= K155KP2:inst.Y1
+X1 => K155LA3:inst2.01
+X1 => K155LA3:inst2.02
+X1 => K155KP2:inst.1D1
+X4 => K155LA3:inst2.04
+X4 => K155LA3:inst2.12
+X4 => K155LA3:inst2.13
+X4 => K155KP2:inst.1D2
+X3 => K155KP2:inst.SED2
+X2 => K155KP2:inst.SED1
+f3 <= K155KP2:inst.Y2
+
+
+|lab1|K155KP2:inst
+Y1 <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1nC => 26.IN0
+SED2 => 27.IN0
+SED1 => 29.IN0
+1D0 => 1.IN3
+1D1 => 2.IN3
+1D2 => 3.IN3
+1D3 => 4.IN3
+Y2 <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2D0 => 5.IN0
+2nC => 25.IN0
+2D1 => 6.IN0
+2D2 => 7.IN0
+2D3 => 8.IN0
+
+
+|lab1|K155LA3:inst2
+03 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+02 => inst.IN0
+01 => inst.IN1
+06 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+05 => inst4.IN0
+04 => inst4.IN1
+08 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+10 => inst5.IN0
+09 => inst5.IN1
+11 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+13 => inst6.IN0
+12 => inst6.IN1
+
+

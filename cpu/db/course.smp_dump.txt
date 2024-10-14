@@ -1,0 +1,21 @@
+
+State Machine - |cpu|cp:inst14|next_state
+Name next_state.s3 next_state.s2 next_state.s1 next_state.s0 
+next_state.s0 0 0 0 0 
+next_state.s1 0 0 1 1 
+next_state.s2 0 1 0 1 
+next_state.s3 1 0 0 1 
+
+State Machine - |cpu|cp:inst14|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 
+
+State Machine - |cpu|alu:inst|control_unit:inst|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 

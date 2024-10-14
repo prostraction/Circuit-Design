@@ -1,0 +1,618 @@
+Analysis & Synthesis report for TEST_OY
+Mon Jan 24 22:49:44 2022
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TEST_OY|OY:uut|ControlUnit:unit_YA|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |TEST_OY
+ 16. Parameter Settings for User Entity Instance: OY:uut
+ 17. Parameter Settings for User Entity Instance: OY:uut|OperationAutomat:unit_OA
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "OY:uut|ControlUnit:unit_YA"
+ 21. Port Connectivity Checks: "OY:uut|OperationAutomat:unit_OA"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 24 22:49:44 2022       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; TEST_OY                                     ;
+; Top-level Entity Name              ; TEST_OY                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 24                                          ;
+;     Total combinational functions  ; 15                                          ;
+;     Dedicated logic registers      ; 14                                          ;
+; Total registers                    ; 14                                          ;
+; Total pins                         ; 31                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; TEST_OY            ; TEST_OY            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; MY_OY/OY.vhd                     ; yes             ; User VHDL File  ; C:/_OEVM/stand_last/MY_OY/OY.vhd                              ;         ;
+; MY_OY/OperationAutomat.vhd       ; yes             ; User VHDL File  ; C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd                ;         ;
+; MY_OY/ControlUnit.vhd            ; yes             ; User VHDL File  ; C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd                     ;         ;
+; TEST_OY.vhd                      ; yes             ; User VHDL File  ; C:/_OEVM/stand_last/TEST_OY.vhd                               ;         ;
+; config.vhd                       ; yes             ; User VHDL File  ; C:/_OEVM/stand_last/config.vhd                                ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf       ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/aglobal191.inc     ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/lpm_add_sub.inc    ;         ;
+; multcore.inc                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/multcore.inc       ;         ;
+; bypassff.inc                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/bypassff.inc       ;         ;
+; altshift.inc                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/altshift.inc       ;         ;
+; multcore.tdf                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/multcore.tdf       ;         ;
+; csa_add.inc                      ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/csa_add.inc        ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/mpar_add.inc       ;         ;
+; muleabz.inc                      ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/muleabz.inc        ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/mul_lfrg.inc       ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/mul_boothc.inc     ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/alt_ded_mult.inc   ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/alt_ded_mult_y.inc ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/dffpipe.inc        ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/mpar_add.tdf       ;         ;
+; altshift.tdf                     ; yes             ; Megafunction    ; f:/quartus/quartus/libraries/megafunctions/altshift.tdf       ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 24        ;
+;                                             ;           ;
+; Total combinational functions               ; 15        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 2         ;
+;     -- 3 input functions                    ; 9         ;
+;     -- <=2 input functions                  ; 4         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 15        ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 14        ;
+;     -- Dedicated logic registers            ; 14        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 31        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 14        ;
+; Total fan-out                               ; 152       ;
+; Average fan-out                             ; 1.43      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name      ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+------------------+--------------+
+; |TEST_OY                         ; 15 (0)              ; 14 (1)                    ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |TEST_OY                                 ; TEST_OY          ; work         ;
+;    |OY:uut|                      ; 15 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TEST_OY|OY:uut                          ; OY               ; work         ;
+;       |ControlUnit:unit_YA|      ; 10 (10)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TEST_OY|OY:uut|ControlUnit:unit_YA      ; ControlUnit      ; work         ;
+;       |OperationAutomat:unit_OA| ; 5 (5)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TEST_OY|OY:uut|OperationAutomat:unit_OA ; OperationAutomat ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |TEST_OY|OY:uut|ControlUnit:unit_YA|state       ;
++----------+----------+----------+----------+----------+----------+
+; Name     ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++----------+----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2 ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3 ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4 ; 1        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                 ;
++----------------------------------------------------+---------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                   ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------------------+------------------------+
+; OY:uut|ControlUnit:unit_YA|y[0]                    ; OY:uut|ControlUnit:unit_YA|Selector11 ; yes                    ;
+; OY:uut|ControlUnit:unit_YA|y[7]                    ; OY:uut|ControlUnit:unit_YA|Selector11 ; yes                    ;
+; OY:uut|ControlUnit:unit_YA|y[4]                    ; GND                                   ; yes                    ;
+; OY:uut|ControlUnit:unit_YA|next_state.s0_251       ; OY:uut|ControlUnit:unit_YA|Selector11 ; yes                    ;
+; OY:uut|ControlUnit:unit_YA|next_state.s2_233       ; OY:uut|ControlUnit:unit_YA|Selector11 ; yes                    ;
+; OY:uut|ControlUnit:unit_YA|next_state.s1_242       ; OY:uut|ControlUnit:unit_YA|Selector11 ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                                       ;                        ;
++----------------------------------------------------+---------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++----------------------------------------------+------------------------------------------------------+
+; Register name                                ; Reason for Removal                                   ;
++----------------------------------------------+------------------------------------------------------+
+; OY:uut|OperationAutomat:unit_OA|rb[3]        ; Lost fanout                                          ;
+; OY:uut|OperationAutomat:unit_OA|i_kor[1..30] ; Stuck at GND due to stuck port data_in               ;
+; OY:uut|OperationAutomat:unit_OA|i_kor[31]    ; Merged with OY:uut|OperationAutomat:unit_OA|i_kor[0] ;
+; OY:uut|OperationAutomat:unit_OA|i_kor[0]     ; Lost fanout                                          ;
+; OY:uut|ControlUnit:unit_YA|state.s3          ; Stuck at GND due to stuck port data_in               ;
+; OY:uut|ControlUnit:unit_YA|state.s4          ; Stuck at GND due to stuck port data_in               ;
+; okay~reg0                                    ; Stuck at VCC due to stuck port clock_enable          ;
+; defect~reg0                                  ; Stuck at GND due to stuck port clock_enable          ;
+; \gen_test:cnt[0..7]                          ; Stuck at GND due to stuck port data_in               ;
+; OY:uut|OperationAutomat:unit_OA|ra[0..3]     ; Stuck at GND due to stuck port data_in               ;
+; OY:uut|OperationAutomat:unit_OA|rb[0..2]     ; Stuck at GND due to stuck port data_in               ;
+; Total Number of Removed Registers = 52       ;                                                      ;
++----------------------------------------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++-------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++-------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; OY:uut|ControlUnit:unit_YA|state.s3 ; Stuck at GND              ; OY:uut|ControlUnit:unit_YA|state.s4, okay~reg0, defect~reg0, \gen_test:cnt[0],            ;
+;                                     ; due to stuck port data_in ; \gen_test:cnt[1], \gen_test:cnt[2], \gen_test:cnt[3], \gen_test:cnt[4], \gen_test:cnt[5], ;
+;                                     ;                           ; \gen_test:cnt[6], \gen_test:cnt[7], OY:uut|OperationAutomat:unit_OA|ra[0],                ;
+;                                     ;                           ; OY:uut|OperationAutomat:unit_OA|ra[1], OY:uut|OperationAutomat:unit_OA|ra[2],             ;
+;                                     ;                           ; OY:uut|OperationAutomat:unit_OA|ra[3], OY:uut|OperationAutomat:unit_OA|rb[0],             ;
+;                                     ;                           ; OY:uut|OperationAutomat:unit_OA|rb[1], OY:uut|OperationAutomat:unit_OA|rb[2]              ;
++-------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 14    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; \ctl_unit:v_sno                        ; 4       ;
+; OY:uut|OperationAutomat:unit_OA|i[0]   ; 4       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TEST_OY|\gen_test:cnt[7]                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TEST_OY|OY:uut|OperationAutomat:unit_OA|rb[2] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TEST_OY|OY:uut|OperationAutomat:unit_OA|rc[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |TEST_OY ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; n              ; 4     ; Signed Integer                                 ;
+; mode           ; 3     ; Signed Integer                                 ;
+; cu             ; 0     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: OY:uut ;
++----------------+-------+----------------------------+
+; Parameter Name ; Value ; Type                       ;
++----------------+-------+----------------------------+
+; n              ; 4     ; Signed Integer             ;
++----------------+-------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: OY:uut|OperationAutomat:unit_OA ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 4     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 3            ; Untyped             ;
+; LPM_WIDTHB                                     ; 3            ; Untyped             ;
+; LPM_WIDTHP                                     ; 6            ; Untyped             ;
+; LPM_WIDTHR                                     ; 6            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 3              ;
+;     -- LPM_WIDTHB                     ; 3              ;
+;     -- LPM_WIDTHP                     ; 6              ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES            ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OY:uut|ControlUnit:unit_YA"                                                                                        ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; s_out          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; next_state_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OY:uut|OperationAutomat:unit_OA"                                                                            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; priznak ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; cx      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 14                          ;
+;     CLR               ; 4                           ;
+;     ENA SCLR SLD      ; 8                           ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 33                          ;
+;     normal            ; 33                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.70                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Mon Jan 24 22:49:36 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TEST_OY -c TEST_OY
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file my_oy/oy.vhd
+    Info (12022): Found design unit 1: OY-struct File: C:/_OEVM/stand_last/MY_OY/OY.vhd Line: 24
+    Info (12023): Found entity 1: OY File: C:/_OEVM/stand_last/MY_OY/OY.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file my_oy/operationautomat.vhd
+    Info (12022): Found design unit 1: OperationAutomat-behav1 File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 21
+    Info (12023): Found entity 1: OperationAutomat File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 7
+Info (12021): Found 1 design units, including 0 entities, in source file my_oy/mk_pack.vhd
+    Info (12022): Found design unit 1: mk_pack File: C:/_OEVM/stand_last/MY_OY/mk_pack.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file my_oy/controlunit.vhd
+    Info (12022): Found design unit 1: ControlUnit-behav1 File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 20
+    Info (12023): Found entity 1: ControlUnit File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file test_oy.vhd
+    Info (12022): Found design unit 1: TEST_OY-bdf_type File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 38
+    Info (12023): Found entity 1: TEST_OY File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 20
+Info (12021): Found 1 design units, including 0 entities, in source file config.vhd
+    Info (12022): Found design unit 1: Operation_Device_for_stand File: C:/_OEVM/stand_last/config.vhd Line: 4
+Info (12127): Elaborating entity "TEST_OY" for the top level hierarchy
+Info (12129): Elaborating entity "OY" using architecture "A:struct" for hierarchy "OY:uut" File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 171
+Info (12128): Elaborating entity "OperationAutomat" for hierarchy "OY:uut|OperationAutomat:unit_OA" File: C:/_OEVM/stand_last/MY_OY/OY.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at OperationAutomat.vhd(72): signal "ra" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at OperationAutomat.vhd(73): signal "rb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 73
+Warning (10034): Output port "cx" at OperationAutomat.vhd(16) has no driver File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 16
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "OY:uut|ControlUnit:unit_YA" File: C:/_OEVM/stand_last/MY_OY/OY.vhd Line: 60
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(37): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at ControlUnit.vhd(37): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[0]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[1]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[2]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[3]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[4]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[5]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[6]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[7]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[8]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "y[9]" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "next_state.s4" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "next_state.s3" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "next_state.s2" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "next_state.s1" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (10041): Inferred latch for "next_state.s0" at ControlUnit.vhd(37) File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 687
+    Info (12134): Parameter "LPM_WIDTHA" = "3"
+    Info (12134): Parameter "LPM_WIDTHB" = "3"
+    Info (12134): Parameter "LPM_WIDTHP" = "6"
+    Info (12134): Parameter "LPM_WIDTHR" = "6"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult0" File: f:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0" File: f:/quartus/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0" File: f:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "OY:uut|ControlUnit:unit_YA|next_state.s2_233" merged with LATCH primitive "OY:uut|ControlUnit:unit_YA|y[7]" File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+Warning (13012): Latch OY:uut|ControlUnit:unit_YA|next_state.s1_242 has unsafe behavior File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal OY:uut|ControlUnit:unit_YA|state.s2 File: C:/_OEVM/stand_last/MY_OY/ControlUnit.vhd Line: 23
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sko" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 26
+    Warning (13410): Pin "okay" is stuck at VCC File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 28
+    Warning (13410): Pin "defect" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 29
+    Warning (13410): Pin "finish" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 30
+    Warning (13410): Pin "true_rez[0]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[1]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[2]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[3]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[4]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[5]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[6]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "true_rez[7]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 32
+    Warning (13410): Pin "x[0]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 33
+    Warning (13410): Pin "x[1]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 33
+    Warning (13410): Pin "x[2]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 33
+    Warning (13410): Pin "x[3]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 33
+    Warning (13410): Pin "y[0]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 34
+    Warning (13410): Pin "y[1]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 34
+    Warning (13410): Pin "y[2]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 34
+    Warning (13410): Pin "y[3]" is stuck at GND File: C:/_OEVM/stand_last/TEST_OY.vhd Line: 34
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~0" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[0]~8" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~2" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[1]~11" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~4" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[2]~13" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~6" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[3]~15" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~8" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[4]~17" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~10" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[5]~19" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|Add0~12" File: f:/quartus/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[6]~21" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+    Info (17048): Logic cell "OY:uut|OperationAutomat:unit_OA|rc[7]~23" File: C:/_OEVM/stand_last/MY_OY/OperationAutomat.vhd Line: 75
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 64 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 33 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 4862 megabytes
+    Info: Processing ended: Mon Jan 24 22:49:44 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:16
+
+

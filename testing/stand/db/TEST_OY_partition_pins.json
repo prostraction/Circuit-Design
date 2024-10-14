@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sno",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[0]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[1]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[2]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[3]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[4]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[5]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[6]",
+					"strict" : false
+				},
+				{
+					"name" : "real_rez[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

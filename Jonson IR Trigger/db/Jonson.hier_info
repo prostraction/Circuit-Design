@@ -1,0 +1,104 @@
+|Jonson
+Q_0 <= KP1533TM8:inst.Q1
+R => KP1533LA3:inst3.09
+R => KP1533LA3:inst3.10
+C => KP1533TM8:inst.C
+C => KP1533TM8:inst1.C
+C => KP1533TM8:inst2.C
+Q_1 <= KP1533TM8:inst.Q2
+Q_2 <= KP1533TM8:inst.Q3
+Q_3 <= KP1533TM8:inst.Q4
+Q_4 <= KP1533TM8:inst1.Q1
+Q_5 <= KP1533TM8:inst1.Q2
+Q_6 <= KP1533TM8:inst1.Q3
+Q_7 <= KP1533TM8:inst1.Q4
+Q_8 <= KP1533TM8:inst2.Q1
+Q_9 <= KP1533TM8:inst2.Q2
+Q_10 <= KP1533TM8:inst2.Q3
+Q_11 <= KP1533TM8:inst2.Q4
+
+
+|Jonson|KP1533TM8:inst
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+nR => inst.ACLR
+nR => inst1.ACLR
+nR => inst2.ACLR
+nR => inst3.ACLR
+C => inst.CLK
+C => inst1.CLK
+C => inst2.CLK
+C => inst3.CLK
+D1 => inst.DATAIN
+nQ1 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst1.DATAIN
+nQ2 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst2.DATAIN
+nQ3 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+Q4 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D4 => inst3.DATAIN
+nQ4 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Jonson|KP1533LA3:inst3
+03 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+02 => inst.IN0
+01 => inst.IN1
+06 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+05 => inst4.IN0
+04 => inst4.IN1
+08 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+10 => inst5.IN0
+09 => inst5.IN1
+11 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+13 => inst6.IN0
+12 => inst6.IN1
+
+
+|Jonson|KP1533TM8:inst1
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+nR => inst.ACLR
+nR => inst1.ACLR
+nR => inst2.ACLR
+nR => inst3.ACLR
+C => inst.CLK
+C => inst1.CLK
+C => inst2.CLK
+C => inst3.CLK
+D1 => inst.DATAIN
+nQ1 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst1.DATAIN
+nQ2 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst2.DATAIN
+nQ3 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+Q4 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D4 => inst3.DATAIN
+nQ4 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Jonson|KP1533TM8:inst2
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+nR => inst.ACLR
+nR => inst1.ACLR
+nR => inst2.ACLR
+nR => inst3.ACLR
+C => inst.CLK
+C => inst1.CLK
+C => inst2.CLK
+C => inst3.CLK
+D1 => inst.DATAIN
+nQ1 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst1.DATAIN
+nQ2 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst2.DATAIN
+nQ3 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+Q4 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D4 => inst3.DATAIN
+nQ4 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+
+

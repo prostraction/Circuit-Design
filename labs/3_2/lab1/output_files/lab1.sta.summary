@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Recovery 'R'
+Slack : -10.271
+TNS   : -19.949
+
+Type  : Slow 1200mV 85C Model Removal 'R'
+Slack : -2.666
+TNS   : -4.935
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'R'
+Slack : -3.575
+TNS   : -44.139
+
+Type  : Slow 1200mV 0C Model Recovery 'R'
+Slack : -9.193
+TNS   : -17.844
+
+Type  : Slow 1200mV 0C Model Removal 'R'
+Slack : -2.350
+TNS   : -4.395
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'R'
+Slack : -3.171
+TNS   : -38.750
+
+Type  : Fast 1200mV 0C Model Recovery 'R'
+Slack : -5.375
+TNS   : -10.631
+
+Type  : Fast 1200mV 0C Model Removal 'R'
+Slack : -1.449
+TNS   : -2.559
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'R'
+Slack : -3.000
+TNS   : -21.176
+
+------------------------------------------------------------

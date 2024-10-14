@@ -1,0 +1,31 @@
+|avtomat_myra
+tay1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+x1 => inst23.IN0
+x1 => inst16.IN0
+x1 => inst31.IN1
+x1 => inst34.IN1
+x1 => inst36.IN2
+x1 => inst19.IN0
+x2 => inst23.IN1
+x2 => inst17.IN0
+x2 => inst30.IN1
+x2 => inst28.IN1
+x2 => inst35.IN1
+x2 => inst37.IN1
+x2 => inst38.IN1
+tay3 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => inst9.ACLR
+CLRN => inst3.ACLR
+CLRN => inst.ACLR
+tay2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst3.CLK
+CLK => inst9.CLK
+CLK => inst.CLK
+ENA => inst3.ENA
+ENA => inst9.ENA
+ENA => inst.ENA
+y1 <= inst39.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= inst40.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= inst41.DB_MAX_OUTPUT_PORT_TYPE
+
+
